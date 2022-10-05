@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "9d258bb9-a5a6-4fe1-953d-258ad37d4bf7",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21073522"
+	},
+	"item": [
+		{
+			"name": "GetProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product/show?gender=men&style=plain color / red&size=xl&limit=2&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"show"
+					],
+					"query": [
+						{
+							"key": "gender",
+							"value": "men"
+						},
+						{
+							"key": "style",
+							"value": "plain color / red"
+						},
+						{
+							"key": "size",
+							"value": "xl"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				},
+				"description": "# **api สำหรับดึงรายการสินค้า**\n\n\\*   api นี้สามารถดึงรายการสินค้าโดยสามารถ filter และแบ่งหน้าได้\n    \n\n**ค่าที่ต้องส่งพร้อมกับคำร้องขอ**\n\nQuery String :{\n\n`gender(String)`: เพศ,  \n`style(String)` : ประเภทสี / สี,  \n`size(String)` : ขนาดเสื้อ,  \n`limit(String)` : จำนวนข้อมูลโดยมีค่าเริ่มต้นเป็น 10,  \n`page(String )`: เลขหน้าโดยมีค่าเริ่มต้นเป็น 1\n\n}"
+			},
+			"response": [
+				{
+					"name": "GetProduct",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/product/show?gender=men&style=plain color / red&size=xl&limit=2&page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"product",
+								"show"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "men"
+								},
+								{
+									"key": "style",
+									"value": "plain color / red"
+								},
+								{
+									"key": "size",
+									"value": "xl"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"171-w29sx4yiXEQr8G7GyVbir59FOS8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Oct 2022 12:47:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"productList\": [\n        {\n            \"Gender\": \"men       \",\n            \"Style\": \"plain color / red                                                                                   \",\n            \"Size\": \"xs        \",\n            \"Price\": \"400       \"\n        },\n        {\n            \"Gender\": \"men       \",\n            \"Style\": \"plain color / red                                                                                   \",\n            \"Size\": \"s         \",\n            \"Price\": \"400       \"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "AddProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"gender\": \"women\",\r\n    \"style\": \"plain color / black\",\r\n    \"size\": \"xl\",\r\n    \"price\": \"320\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
